@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucifer Minecraft Server | Survival Economy 1.20+</title>
+    <meta name="description" content="Lucifer Minecraft Server - Survival Economy dengan fitur Custom Enchant, Land Protection, Player Warps. Bergabung sekarang dengan IP: play.lucifer.my.id:19132" />
+    <meta name="keywords" content="Lucifer Minecraft Server, Server Minecraft 1.20, Survival Economy, Bedrock Java Server, play.lucifer.my.id" />
+    <meta name="author" content="Lucifer Server Team" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Lucifer Minecraft Server" />
+    <meta property="og:description" content="Survival Economy Server dengan fitur unik. Join sekarang!" />
+    <meta property="og:image" content="images/favicon.png" />
+    <meta property="og:url" content="https://play.lucifer.my.id" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" />
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Orbitron', 'sans-serif'],
+                        body: ['Rajdhani', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        /* CRITICAL CSS - Load immediately */
+        :root {
+            --primary: #3b82f6;
+            --primary-light: #60a5fa;
+            --primary-dark: #2563eb;
+            --secondary: #1e293b;
+            --secondary-light: #334155;
+            --secondary-dark: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--secondary-dark);
+            color: #fff;
+            min-height: 100vh;
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Fix scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-light);
+        }
+
+        /* Prevent white flash on scroll */
+        html, body {
+            background-color: var(--secondary-dark);
+        }
+
+        /* Optimize images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* FIX MOBILE MENU BUTTON - TAMBAHKAN INI */
+        #mobileMenuBtn {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        #mobileMenuBtn i {
+            font-size: 1.5rem;
+            pointer-events: none;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* Defer non-critical styles */
+        @media (min-width: 768px) {
+            .deferred-styles {
+                opacity: 1;
+            }
+        }
+
+        /* Performance optimizations */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+
+    <!-- Deferred styles -->
+    <style>
+        /* NON-CRITICAL CSS - Load after page is visible */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-top: 3px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            font-weight: 600;
+            padding: 12px 32px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .status-online {
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+        }
+
+        .status-offline {
+            background: #ef4444;
+            box-shadow: 0 0 10px #ef4444;
+        }
+
+        .nav-link {
+            position: relative;
+            color: #cbd5e1;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .hero-bg {
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.7)),
+                var(--hero-image, url('media/server-banner.jpg')) center/cover no-repeat;
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 2px;
+            margin: 1rem auto;
+        }
+
+        .social-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .staff-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light)) border-box;
+            padding: 3px;
+        }
+
+        /* Responsive optimizations */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem !important;
+            }
+            .section-title {
+                font-size: 2rem !important;
+            }
+            
+            /* Disable heavy effects on mobile */
+            .glass-card {
+                backdrop-filter: blur(5px);
+            }
+        }
+
+        /* Fix for iOS scrolling */
+        .ios-scroll-fix {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Loading animation */
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Fix for background rendering */
+        .bg-fixed {
+            background-attachment: scroll !important;
+        }
+    </style>
+</head>
+<body class="font-body ios-scroll-fix">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-secondary-900/90 backdrop-blur-md border-b border-primary/30">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img 
+                        src="images/favicon.png" 
+                        alt="Lucifer Server Logo" 
+                        class="h-10 w-10 sm:h-12 sm:w-12"
+                        loading="eager"
+                        width="48"
+                        height="48"
+                    />
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-heading font-bold gradient-text">LUCIFER SERVER</h1>
+                        <p class="text-xs text-gray-400 hidden sm:block">Minecraft Survival Economy</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="nav-link active">Beranda</a>
+                    <a href="#features" class="nav-link">Fitur</a>
+                    <a href="#gallery" class="nav-link">Galeri</a>
+                    <a href="#resources" class="nav-link">Sumber Daya</a>
+                    <a href="#connect" class="nav-link">Hubungi</a>
+                    <a href="#staff" class="nav-link">Staf</a>
+                    <a href="store.html" class="btn-primary text-sm px-4 py-2">Toko</a>
+                </nav>
+
+                <!-- Mobile Menu Button - DIPERBAIKI -->
+                <button 
+                    id="mobileMenuBtn" 
+                    class="md:hidden text-white p-2 focus:outline-none"
+                    aria-label="Toggle mobile menu"
+                    style="min-width: 44px; min-height: 44px;"
+                >
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden mt-4">
+                <div class="flex flex-col space-y-3 py-4">
+                    <a href="#home" class="nav-link active py-3 px-4 bg-secondary-800/50 rounded">Beranda</a>
+                    <a href="#features" class="nav-link py-3 px-4 bg-secondary-800/50 rounded">Fitur</a>
+                    <a href="#gallery" class="nav-link py-3 px-4 bg-secondary-800/50 rounded">Galeri</a>
+                    <a href="#resources" class="nav-link py-3 px-4 bg-secondary-800/50 rounded">Sumber Daya</a>
+                    <a href="#connect" class="nav-link py-3 px-4 bg-secondary-800/50 rounded">Hubungi</a>
+                    <a href="#staff" class="nav-link py-3 px-4 bg-secondary-800/50 rounded">Staf</a>
+                    <a href="store.html" class="btn-primary text-center py-3 px-4">Toko</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden bg-fixed">
+        <div class="absolute inset-0 bg-gradient-to-t from-secondary-900 via-transparent to-transparent"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 py-20 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Server Status Badge -->
+                <div class="inline-flex items-center bg-secondary-800/70 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                    <span id="heroStatus" class="status-indicator status-online pulse-animation mr-2"></span>
+                    <span class="text-sm font-medium">Online - <span id="heroPlayers">24</span> pemain</span>
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 hero-title">
+                    <span class="gradient-text">SELAMAT DATANG DI</span><br>
+                    <span class="text-white">LUCIFER SERVER</span>
+                </h1>
+
+                <!-- Description -->
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Pengalaman Minecraft Survival Economy terbaik dengan fitur kustom, 
+                    gameplay yang adil, dan komunitas yang luar biasa!
+                </p>
+
+                <!-- Server IP -->
+                <div class="glass-card inline-block p-4 mb-8">
+                    <div class="flex items-center space-x-4">
+                        <div>
+                            <p class="text-gray-400 text-sm">Alamat Server</p>
+                            <p class="text-white font-mono text-lg sm:text-xl font-bold">play.lucifer.my.id</p>
+                            <p class="text-gray-400 text-sm">Port: 19132</p>
+                        </div>
+                        <button id="copyIpBtn" class="btn-primary text-sm px-4 py-2">
+                            <i class="fas fa-copy mr-2"></i>Salin IP
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                    <a href="#connect" class="btn-primary px-8 py-3 text-lg">
+                        <i class="fas fa-gamepad mr-2"></i>GABUNG SEKARANG
+                    </a>
+                    <a href="#features" class="glass-card px-8 py-3 text-lg text-primary border border-primary/30 hover:bg-primary/5">
+                        <i class="fas fa-star mr-2"></i>LIHAT FITUR
+                    </a>
+                </div>
+
+                <!-- Quick Info -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                    <div class="glass-card p-4 text-center">
+                        <i class="fas fa-users text-primary text-2xl mb-2"></i>
+                        <p class="text-sm text-gray-400">Pemain Aktif</p>
+                        <p class="text-xl font-bold">50+ Harian</p>
+                    </div>
+                    <div class="glass-card p-4 text-center">
+                        <i class="fas fa-shield-alt text-primary text-2xl mb-2"></i>
+                        <p class="text-sm text-gray-400">Uptime</p>
+                        <p class="text-xl font-bold">99.9%</p>
+                    </div>
+                    <div class="glass-card p-4 text-center">
+                        <i class="fas fa-code-branch text-primary text-2xl mb-2"></i>
+                        <p class="text-sm text-gray-400">Versi</p>
+                        <p class="text-xl font-bold">1.20+</p>
+                    </div>
+                    <div class="glass-card p-4 text-center">
+                        <i class="fas fa-globe text-primary text-2xl mb-2"></i>
+                        <p class="text-sm text-gray-400">Tipe</p>
+                        <p class="text-xl font-bold">Bedrock/Java</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-secondary-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4 section-title">
+                    <span class="gradient-text">FITUR SERVER</span>
+                </h2>
+                <div class="section-divider"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400 text-lg">
+                    Alami gameplay unik dengan fitur kustom kami
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card p-6">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-coins text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold">Sistem Ekonomi</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Ekonomi kuat dengan toko, lelang, dan perdagangan.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card p-6">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-gem text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold">Enchantment Kustom</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Enchantment eksklusif yang tidak ditemukan di Minecraft vanilla.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card p-6">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-shield-alt text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold">Proteksi Lahan</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Sistem klaim lahan canggih untuk melindungi bangunan Anda.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-card p-6">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold">Warp Pemain</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Buat warp pribadi untuk bepergian cepat antar bangunan.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="glass-card p-6">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-tasks text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold">Sistem Quest</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Selesaikan quest harian dan mingguan untuk hadiah.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="glass-card p-6">
+                    <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mr-4">
+                            <i class="fas fa-crown text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold">Sistem Rank</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Rank khusus dengan keuntungan dan fitur unik.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-secondary-800">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4">
+                    <span class="gradient-text">GALERI SERVER</span>
+                </h2>
+                <div class="section-divider"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400 text-lg">
+                    Lihat bangunan dan fitur server kami yang luar biasa
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="glass-card overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img 
+                            src="images/arena.png" 
+                            alt="Arena PVP" 
+                            class="w-full h-48 object-cover"
+                            loading="lazy"
+                            width="400"
+                            height="200"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">Arena PVP</h3>
+                            <p class="text-gray-300 text-sm">Bertarung melawan pemain lain</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="glass-card overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img 
+                            src="images/spawn.png" 
+                            alt="Area Spawn" 
+                            class="w-full h-48 object-cover"
+                            loading="lazy"
+                            width="400"
+                            height="200"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">Spawn Hub</h3>
+                            <p class="text-gray-300 text-sm">Titik pertemuan utama</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="glass-card overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img 
+                            src="images/shop.png" 
+                            alt="Toko Pemain" 
+                            class="w-full h-48 object-cover"
+                            loading="lazy"
+                            width="400"
+                            height="200"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">Pasar</h3>
+                            <p class="text-gray-300 text-sm">Ekonomi dijalankan pemain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-16 bg-secondary-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4">
+                    <span class="gradient-text">SUMBER DAYA CEPAT</span>
+                </h2>
+                <div class="section-divider"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400 text-lg">
+                    Semua yang Anda butuhkan dalam satu tempat
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Store Card -->
+                <a href="store.html" class="glass-card p-8 text-center hover:border-primary/50 group">
+                    <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-store text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-3">Toko</h3>
+                    <p class="text-gray-300 mb-4">
+                        Dapatkan rank khusus dan dukung server.
+                    </p>
+                    <div class="text-primary font-medium flex items-center justify-center">
+                        Lihat Paket
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+
+                <!-- Vote Card -->
+                <a href="vote.html" class="glass-card p-8 text-center hover:border-primary/50 group">
+                    <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-thumbs-up text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-3">Vote</h3>
+                    <p class="text-gray-300 mb-4">
+                        Vote untuk server kami dan dapatkan hadiah gratis.
+                    </p>
+                    <div class="text-primary font-medium flex items-center justify-center">
+                        Vote & Dapatkan Hadiah
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+
+                <!-- Discord Card -->
+                <a href="https://discord.gg/Hvn5wq2X" target="_blank" class="glass-card p-8 text-center hover:border-primary/50 group">
+                    <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-discord text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-3">Discord</h3>
+                    <p class="text-gray-300 mb-4">
+                        Bergabung dengan komunitas kami untuk pengumuman dan dukungan.
+                    </p>
+                    <div class="text-primary font-medium flex items-center justify-center">
+                        Gabung Komunitas
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="py-16 bg-gradient-to-b from-secondary-800 to-secondary-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4">
+                    <span class="gradient-text">CARA BERHUBUNGAN</span>
+                </h2>
+                <div class="section-divider"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400 text-lg">
+                    Bergabung dengan server kami dan jadilah bagian dari komunitas
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Server Info Card -->
+                <div class="glass-card p-6 sm:p-8">
+                    <h3 class="text-xl font-heading font-bold text-white mb-6 flex items-center">
+                        <i class="fas fa-server text-primary mr-3"></i>
+                        Informasi Server
+                    </h3>
+
+                    <div class="space-y-4">
+                        <!-- Server IP -->
+                        <div class="bg-secondary-800/50 p-4 rounded-lg border-l-4 border-primary">
+                            <div>
+                                <p class="text-gray-400 text-sm mb-1">Alamat Server</p>
+                                <p class="text-white font-mono text-lg font-bold">play.lucifer.my.id</p>
+                                <div class="flex items-center mt-2">
+                                    <i class="fas fa-plug text-gray-500 mr-2 text-sm"></i>
+                                    <p class="text-gray-400 text-sm">Port: 19132</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Version -->
+                        <div class="bg-secondary-800/50 p-4 rounded-lg border-l-4 border-primary">
+                            <p class="text-gray-400 text-sm mb-2">Versi yang Didukung</p>
+                            <div class="flex items-center">
+                                <i class="fas fa-code-branch text-primary mr-2"></i>
+                                <p class="text-white">Minecraft 1.20+</p>
+                                <span class="ml-2 px-2 py-1 bg-primary/20 text-primary text-xs rounded-full">Terbaru</span>
+                            </div>
+                            <p class="text-gray-400 text-xs mt-2">Kompatibel dengan Java & Bedrock</p>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="bg-secondary-800/50 p-4 rounded-lg border-l-4 border-primary">
+                            <p class="text-gray-400 text-sm mb-2">Status Server Langsung</p>
+                            <div class="flex items-center flex-wrap gap-2">
+                                <span id="serverStatus" class="status-indicator status-online pulse-animation"></span>
+                                <span class="text-white font-medium mr-3">Online</span>
+                                <span class="text-sm text-gray-300 ml-auto bg-black/30 px-3 py-1 rounded-full">
+                                    <span id="playerCount">24</span>/50 pemain
+                                </span>
+                            </div>
+                            <div class="mt-2 text-xs text-gray-500">
+                                Terakhir diperbarui: <span id="lastUpdated">Baru saja</span>
+                            </div>
+                        </div>
+
+                        <!-- Copy IP Button -->
+                        <button id="copyIpBtn2" class="w-full btn-primary py-3 mt-4">
+                            <i class="fas fa-copy mr-2"></i>
+                            <span id="copyIpText">Salin IP Server & Port</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Social Media Card -->
+                <div class="glass-card p-6 sm:p-8">
+                    <h3 class="text-xl font-heading font-bold text-white mb-6 flex items-center">
+                        <i class="fas fa-users text-primary mr-3"></i>
+                        Bergabung dengan Komunitas Kami
+                    </h3>
+
+                    <div class="space-y-4">
+                        <!-- Discord -->
+                        <a href="https://discord.gg/Hvn5wq2X" target="_blank" 
+                           class="social-card p-4 flex items-center group">
+                            <div class="w-12 h-12 rounded-full bg-indigo-900/30 flex items-center justify-center mr-4">
+                                <i class="fab fa-discord text-indigo-400 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-white">Server Discord</h4>
+                                <p class="text-sm text-gray-400">Bergabung dengan komunitas aktif kami</p>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-500"></i>
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="https://tiktok.com/@nin.098" target="_blank" 
+                           class="social-card p-4 flex items-center group">
+                            <div class="w-12 h-12 rounded-full bg-gray-900/30 flex items-center justify-center mr-4">
+                                <i class="fab fa-tiktok text-gray-100 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-white">TikTok</h4>
+                                <p class="text-sm text-gray-400">Ikuti untuk update & highlight</p>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-500"></i>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:adninsky1@gmail.com" 
+                           class="social-card p-4 flex items-center group">
+                            <div class="w-12 h-12 rounded-full bg-red-900/30 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-red-400 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-white">Dukungan Email</h4>
+                                <p class="text-sm text-gray-400">Hubungi untuk bantuan</p>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-500"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section id="staff" class="py-16 bg-secondary-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4">
+                    <span class="gradient-text">TIM KAMI</span>
+                </h2>
+                <div class="section-divider"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400 text-lg">
+                    Kenali tim berdedikasi di balik Lucifer Server
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Owner -->
+                <div class="glass-card p-8 text-center">
+                    <div class="flex justify-center mb-4">
+                        <img 
+                            src="images/owner.png" 
+                            alt="Pemilik Server" 
+                            class="staff-avatar"
+                            loading="lazy"
+                            width="100"
+                            height="100"
+                        />
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Pemilik Server</h3>
+                    <p class="text-primary font-medium mb-4">Administrator</p>
+                    <p class="text-gray-300 text-sm">
+                        Mengelola operasi server dan memastikan gameplay lancar.
+                    </p>
+                </div>
+
+                <!-- Admin -->
+                <div class="glass-card p-8 text-center">
+                    <div class="flex justify-center mb-4">
+                        <img 
+                            src="images/rajaaditya.png" 
+                            alt="Admin" 
+                            class="staff-avatar"
+                            loading="lazy"
+                            width="100"
+                            height="100"
+                        />
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Administrator</h3>
+                    <p class="text-primary font-medium mb-4">Manajemen Server</p>
+                    <p class="text-gray-300 text-sm">
+                        Menangani pemeliharaan server dan dukungan pemain.
+                    </p>
+                </div>
+
+                <!-- Moderator -->
+                <div class="glass-card p-8 text-center">
+                    <div class="flex justify-center mb-4">
+                        <img 
+                            src="images/nukiisback.png" 
+                            alt="Moderator" 
+                            class="staff-avatar"
+                            loading="lazy"
+                            width="100"
+                            height="100"
+                        />
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Moderator</h3>
+                    <p class="text-primary font-medium mb-4">Manajemen Komunitas</p>
+                    <p class="text-gray-300 text-sm">
+                        Memastikan permainan yang adil dan komunitas positif.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/70 py-8 border-t border-primary/30">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <img 
+                        src="images/favicon.png" 
+                        alt="Lucifer Server Logo" 
+                        class="h-10 w-10"
+                        loading="lazy"
+                        width="40"
+                        height="40"
+                    />
+                    <div>
+                        <h2 class="text-xl font-heading font-bold gradient-text">LUCIFER SERVER</h2>
+                        <p class="text-xs text-gray-500">Minecraft Survival Economy</p>
+                    </div>
+                </div>
+
+                <div class="text-gray-500 text-sm text-center md:text-right">
+                    <p>© 2026 Lucifer Minecraft Server. Hak cipta dilindungi.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex flex-wrap gap-4 mb-4 md:mb-0">
+                        <a href="#home" class="text-gray-400 hover:text-primary text-sm">Beranda</a>
+                        <a href="#features" class="text-gray-400 hover:text-primary text-sm">Fitur</a>
+                        <a href="store.html" class="text-gray-400 hover:text-primary text-sm">Toko</a>
+                        <a href="vote.html" class="text-gray-400 hover:text-primary text-sm">Vote</a>
+                        <a href="#connect" class="text-gray-400 hover:text-primary text-sm">Hubungi</a>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="https://discord.gg/Hvn5wq2X" target="_blank" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-discord text-xl"></i>
+                        </a>
+                        <a href="https://tiktok.com/@nin.098" target="_blank" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                        <a href="mailto:adninsky1@gmail.com" class="text-gray-400 hover:text-white">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button 
+        id="backToTop" 
+        class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible z-40"
+        aria-label="Back to top"
+    >
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Optimized JavaScript -->
+    <script>
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Lucifer Server Website - Optimized');
+            
+            // ============================================
+            // CONFIGURATION
+            // ============================================
+            const CONFIG = {
+                SERVER_IP: "play.lucifer.my.id:19132",
+                DEBOUNCE_DELAY: 100 // ms
+            };
+
+            // ============================================
+            // CACHE DOM ELEMENTS
+            // ============================================
+            const elements = {
+                mobileMenuBtn: document.getElementById('mobileMenuBtn'),
+                mobileMenu: document.getElementById('mobileMenu'),
+                copyIpBtn: document.getElementById('copyIpBtn'),
+                copyIpBtn2: document.getElementById('copyIpBtn2'),
+                copyIpText: document.getElementById('copyIpText'),
+                backToTop: document.getElementById('backToTop'),
+                navLinks: document.querySelectorAll('.nav-link')
+            };
+
+            // ============================================
+            // STATE MANAGEMENT
+            // ============================================
+            let state = {
+                isMobileMenuOpen: false,
+                lastScrollY: 0,
+                ticking: false
+            };
+
+            // ============================================
+            // UTILITY FUNCTIONS (Optimized)
+            // ============================================
+            const utils = {
+                // Debounce function untuk performance
+                debounce(func, wait) {
+                    let timeout;
+                    return function executedFunction(...args) {
+                        const later = () => {
+                            clearTimeout(timeout);
+                            func(...args);
+                        };
+                        clearTimeout(timeout);
+                        timeout = setTimeout(later, wait);
+                    };
+                },
+
+                // Throttle function untuk scroll events
+                throttle(callback, limit) {
+                    let waiting = false;
+                    return function() {
+                        if (!waiting) {
+                            callback.apply(this, arguments);
+                            waiting = true;
+                            setTimeout(function() {
+                                waiting = false;
+                            }, limit);
+                        }
+                    };
+                },
+
+                // Show notification
+                showNotification(message, type = 'success') {
+                    const notification = document.createElement('div');
+                    notification.className = `fixed top-24 right-6 ${
+                        type === 'success' ? 'bg-green-500/90' : 'bg-primary/90'
+                    } text-white px-6 py-3 rounded-lg shadow-lg z-50`;
+                    notification.style.transform = 'translateX(100%)';
+                    
+                    notification.innerHTML = `
+                        <div class="flex items-center">
+                            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'} mr-3"></i>
+                            <span>${message}</span>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(notification);
+                    
+                    // Animate in
+                    setTimeout(() => {
+                        notification.style.transform = 'translateX(0)';
+                    }, 10);
+                    
+                    // Remove after 3 seconds
+                    setTimeout(() => {
+                        notification.style.transform = 'translateX(100%)';
+                        setTimeout(() => notification.remove(), 300);
+                    }, 3000);
+                }
+            };
+
+            // ============================================
+            // FIXED: MOBILE MENU BUTTON CLICK ISSUE
+            // ============================================
+            function toggleMobileMenu(e) {
+                // Prevent event bubbling
+                e.stopPropagation();
+                
+                state.isMobileMenuOpen = !state.isMobileMenuOpen;
+                
+                if (state.isMobileMenuOpen) {
+                    elements.mobileMenu.classList.add('open');
+                    elements.mobileMenuBtn.innerHTML = '<i class="fas fa-times text-xl"></i>';
+                    // Add click outside listener
+                    setTimeout(() => {
+                        document.addEventListener('click', closeMenuOnClickOutside);
+                    }, 10);
+                } else {
+                    elements.mobileMenu.classList.remove('open');
+                    elements.mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                    // Remove click outside listener
+                    document.removeEventListener('click', closeMenuOnClickOutside);
+                }
+            }
+
+            function closeMenuOnClickOutside(e) {
+                if (!elements.mobileMenu.contains(e.target) && 
+                    !elements.mobileMenuBtn.contains(e.target) &&
+                    state.isMobileMenuOpen) {
+                    state.isMobileMenuOpen = false;
+                    elements.mobileMenu.classList.remove('open');
+                    elements.mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                    document.removeEventListener('click', closeMenuOnClickOutside);
+                }
+            }
+
+            // ============================================
+            // COPY IP FUNCTIONALITY
+            // ============================================
+            async function copyServerIP() {
+                try {
+                    await navigator.clipboard.writeText(CONFIG.SERVER_IP);
+                    
+                    const btn = event.currentTarget;
+                    const originalText = btn.querySelector('span')?.textContent || 'Salin IP Server';
+                    
+                    // Update button
+                    btn.innerHTML = '<i class="fas fa-check mr-2"></i> Tersalin!';
+                    btn.style.backgroundColor = '#10b981';
+                    
+                    // Show notification
+                    utils.showNotification('IP Server berhasil disalin!', 'success');
+                    
+                    // Reset button setelah 2 detik
+                    setTimeout(() => {
+                        btn.innerHTML = `<i class="fas fa-copy mr-2"></i>${originalText}`;
+                        btn.style.backgroundColor = '';
+                    }, 2000);
+                    
+                } catch (error) {
+                    utils.showNotification('Gagal menyalin IP. Silakan salin manual.', 'error');
+                }
+            }
+
+            // ============================================
+            // SMOOTH SCROLL (Optimized)
+            // ============================================
+            function setupSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        const href = this.getAttribute('href');
+                        if (href === '#' || href === '#!') return;
+                        
+                        e.preventDefault();
+                        
+                        // Close mobile menu jika open
+                        if (state.isMobileMenuOpen) {
+                            state.isMobileMenuOpen = false;
+                            elements.mobileMenu.classList.remove('open');
+                            elements.mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                        }
+                        
+                        const target = document.querySelector(href);
+                        if (!target) return;
+                        
+                        // Hitung posisi scroll
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        // Smooth scroll
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL tanpa reload
+                        history.pushState(null, null, href);
+                        
+                        // Update active nav link
+                        updateActiveNavLink(href);
+                    });
+                });
+            }
+
+            // ============================================
+            // ACTIVE NAV LINK DETECTION (Optimized)
+            // ============================================
+            function updateActiveNavLink(hash = null) {
+                const currentHash = hash || window.location.hash;
+                
+                elements.navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === currentHash) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            function handleScrollNav() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPosition = window.scrollY + 100;
+                
+                let currentSection = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        currentSection = '#' + section.getAttribute('id');
+                    }
+                });
+                
+                updateActiveNavLink(currentSection);
+            }
+
+            // ============================================
+            // BACK TO TOP BUTTON (Optimized)
+            // ============================================
+            function handleBackToTop() {
+                if (window.scrollY > 300) {
+                    elements.backToTop.classList.remove('opacity-0', 'invisible');
+                    elements.backToTop.classList.add('opacity-100', 'visible');
+                } else {
+                    elements.backToTop.classList.remove('opacity-100', 'visible');
+                    elements.backToTop.classList.add('opacity-0', 'invisible');
+                }
+            }
+
+            // ============================================
+            // SIMULATED SERVER STATUS (Lightweight)
+            // ============================================
+            function updateServerStatus() {
+                // Update player count secara random
+                const playerCountEl = document.getElementById('playerCount');
+                const heroPlayersEl = document.getElementById('heroPlayers');
+                
+                if (playerCountEl && heroPlayersEl) {
+                    const current = parseInt(playerCountEl.textContent) || 24;
+                    const change = Math.random() > 0.5 ? 1 : -1;
+                    const newCount = Math.max(15, Math.min(35, current + change));
+                    
+                    playerCountEl.textContent = newCount;
+                    heroPlayersEl.textContent = newCount;
+                }
+                
+                // Update waktu
+                const lastUpdatedEl = document.getElementById('lastUpdated');
+                if (lastUpdatedEl) {
+                    const now = new Date();
+                    lastUpdatedEl.textContent = now.toLocaleTimeString('id-ID', {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                }
+            }
+
+            // ============================================
+            // INITIALIZATION (Optimized)
+            // ============================================
+            function init() {
+                // Event Listeners
+                if (elements.mobileMenuBtn) {
+                    // FIXED: Gunakan proper click event
+                    elements.mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+                }
+                
+                if (elements.copyIpBtn) {
+                    elements.copyIpBtn.addEventListener('click', copyServerIP);
+                }
+                
+                if (elements.copyIpBtn2) {
+                    elements.copyIpBtn2.addEventListener('click', copyServerIP);
+                }
+                
+                if (elements.backToTop) {
+                    elements.backToTop.addEventListener('click', () => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+                
+                // Setup smooth scroll
+                setupSmoothScroll();
+                
+                // Scroll events dengan throttle untuk performance
+                window.addEventListener('scroll', utils.throttle(() => {
+                    handleScrollNav();
+                    handleBackToTop();
+                }, 100));
+                
+                // Initial updates
+                handleBackToTop();
+                handleScrollNav();
+                updateServerStatus();
+                
+                // Update server status setiap 30 detik
+                setInterval(updateServerStatus, 30000);
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && state.isMobileMenuOpen) {
+                        state.isMobileMenuOpen = false;
+                        elements.mobileMenu.classList.remove('open');
+                        elements.mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                    }
+                });
+            }
+
+            // ============================================
+            // START APPLICATION
+            // ============================================
+            init();
+        });
+    </script>
+</body>
+</html>

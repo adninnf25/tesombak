@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucifer Server Store | Rank Packages & Perks</title>
+    <meta name="description" content="Dapatkan rank khusus di Lucifer Minecraft Server. WINGS, WINGS+, dan MEDIA rank dengan berbagai fitur eksklusif. Support server dan dapatkan keuntungan!" />
+    <meta name="keywords" content="Lucifer Server Store, Rank Minecraft, WINGS rank, WINGS+ rank, MEDIA rank, beli rank minecraft" />
+    <meta name="author" content="Lucifer Server Team" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lucifer Server Store - Rank Packages" />
+    <meta property="og:description" content="Dapatkan rank eksklusif dengan fitur spesial di Lucifer Server" />
+    <meta property="og:image" content="images/favicon.png" />
+    <meta property="og:url" content="https://play.lucifer.my.id/store" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a'
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Orbitron', 'sans-serif'],
+                        body: ['Rajdhani', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-light: #60a5fa;
+            --primary-dark: #2563eb;
+            --secondary: #1e293b;
+            --secondary-light: #334155;
+            --secondary-dark: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
+            color: #fff;
+            min-height: 100vh;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--secondary-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        /* Primary Button */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            font-weight: 600;
+            padding: 12px 32px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Package Card */
+        .package-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transition: left 0.7s;
+        }
+
+        .package-card:hover::before {
+            left: 100%;
+        }
+
+        /* Feature List */
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Price Badge */
+        .price-badge {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 2px;
+            margin: 1rem auto;
+        }
+
+        /* Nav Link */
+        .nav-link {
+            position: relative;
+            color: #cbd5e1;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* Accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.open {
+            max-height: 500px;
+        }
+
+        /* Payment Method */
+        .payment-method {
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="font-body">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-secondary-900/90 backdrop-blur-md border-b border-primary/30">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="index.html">
+                        <img src="images/favicon.png" alt="Lucifer Server Logo" class="h-10 w-10 sm:h-12 sm:w-12" />
+                    </a>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-heading font-bold gradient-text">LUCIFER STORE</h1>
+                        <p class="text-xs text-gray-400 hidden sm:block">Rank Packages & Perks</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#features" class="nav-link">Features</a>
+                    <a href="#packages" class="nav-link active">Packages</a>
+                    <a href="#payment" class="nav-link">Payment</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <a href="vote.html" class="btn-primary text-sm px-4 py-2">Vote</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden mt-4">
+                <div class="flex flex-col space-y-3 py-4">
+                    <a href="index.html" class="nav-link py-2 px-4 bg-secondary-800/50 rounded">Home</a>
+                    <a href="index.html#features" class="nav-link py-2 px-4 bg-secondary-800/50 rounded">Features</a>
+                    <a href="#packages" class="nav-link active py-2 px-4 bg-secondary-800/50 rounded">Packages</a>
+                    <a href="#payment" class="nav-link py-2 px-4 bg-secondary-800/50 rounded">Payment</a>
+                    <a href="#faq" class="nav-link py-2 px-4 bg-secondary-800/50 rounded">FAQ</a>
+                    <a href="vote.html" class="btn-primary text-center py-2 px-4">Vote</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-12 sm:py-20 bg-gradient-to-br from-primary/10 via-secondary-900 to-secondary-800">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-6">
+                    <span class="gradient-text">UPGRADE YOUR</span>
+                    <span class="text-white block">GAMING EXPERIENCE</span>
+                </h1>
+                
+                <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Dapatkan rank eksklusif dengan fitur spesial. Support server dan nikmati berbagai keuntungan!
+                </p>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
+                    <div class="glass-card p-4 text-center">
+                        <i class="fas fa-crown text-primary text-2xl mb-2"></i>
+                        <p class="text-sm text-gray-400">Rank Owners</p>
+                        <p class="text-xl font-bold">150+</p>
+                    </div>
+                    <div class="glass-card p-4 text-center">
+                        <i class="fas fa-shield-alt text-primary text-2xl mb-2"></i>
+                        <p class="text-sm text-gray-400">Active Support</p>
+                        <p class="text-xl font-bold">24/7</p>
+                    </div>
+                    <div class="glass-card p-4 text-center">
+                        <i class="fas fa-bolt text-primary text-2xl mb-2"></i>
+                        <p class="text-sm text-gray-400">Instant Delivery</p>
+                        <p class="text-xl font-bold">≤ 5 mins</p>
+                    </div>
+                    <div class="glass-card p-4 text-center">
+                        <i class="fas fa-user-check text-primary text-2xl mb-2"></i>
+                        <p class="text-sm text-gray-400">Satisfied Players</p>
+                        <p class="text-xl font-bold">98%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="py-16 bg-secondary-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4">
+                    <span class="gradient-text">CHOOSE YOUR RANK</span>
+                </h2>
+                <div class="section-divider"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400">
+                    Pilih paket yang sesuai dengan kebutuhan Anda. Semua rank memberikan keuntungan eksklusif!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- WINGS Rank -->
+                <div class="glass-card package-card p-8 rounded-2xl">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-feather-alt text-blue-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">WINGS</h3>
+                        <div class="price-badge mb-4">50 Coins</div>
+                        <p class="text-gray-400 text-sm">30 Days Access</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-white mb-4 flex items-center">
+                            <i class="fas fa-star text-yellow-400 mr-2"></i>
+                            Included Features
+                        </h4>
+                        <div class="space-y-2">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Name prefix (nametag, chat, tablist)</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Fly ability in spawn area</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>/craft command access</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>/order limit: 6</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>/home limit: 6</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>/auction limit: 6</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Daily /kit wings claim</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="selectPackage('wings')" class="w-full btn-primary py-3">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        SELECT WINGS
+                    </button>
+                </div>
+
+                <!-- WINGS+ Rank -->
+                <div class="glass-card package-card p-8 rounded-2xl border-2 border-primary relative">
+                    <div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 rounded-bl-lg">
+                        <span class="text-sm font-bold">POPULAR</span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-crown text-purple-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">WINGS+</h3>
+                        <div class="price-badge mb-4">100 Coins</div>
+                        <p class="text-gray-400 text-sm">30 Days Access</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-white mb-4 flex items-center">
+                            <i class="fas fa-gem text-purple-400 mr-2"></i>
+                            All WINGS Features PLUS:
+                        </h4>
+                        <div class="space-y-2">
+                            <div class="feature-item">
+                                <i class="fas fa-plus-circle text-purple-400 mr-3"></i>
+                                <span>/nick command access</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-plus-circle text-purple-400 mr-3"></i>
+                                <span>/anvil command access</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-plus-circle text-purple-400 mr-3"></i>
+                                <span>/order limit increased to 10</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-plus-circle text-purple-400 mr-3"></i>
+                                <span>/home limit increased to 10</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-plus-circle text-purple-400 mr-3"></i>
+                                <span>/auction limit increased to 10</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-plus-circle text-purple-400 mr-3"></i>
+                                <span>Priority support access</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-plus-circle text-purple-400 mr-3"></i>
+                                <span>Exclusive particle effects</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="selectPackage('wings-plus')" class="w-full btn-primary py-3">
+                        <i class="fas fa-crown mr-2"></i>
+                        SELECT WINGS+
+                    </button>
+                </div>
+
+                <!-- MEDIA Rank -->
+                <div class="glass-card package-card p-8 rounded-2xl">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-video text-green-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">MEDIA</h3>
+                        <div class="price-badge bg-gradient-to-r from-green-500 to-emerald-500 mb-4">FREE</div>
+                        <p class="text-gray-400 text-sm">Via Discord Ticket</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-lg font-bold text-white mb-4 flex items-center">
+                            <i class="fas fa-bullhorn text-green-400 mr-2"></i>
+                            For Content Creators
+                        </h4>
+                        <div class="space-y-2">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Name prefix (nametag, chat, tablist)</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Fly ability in spawn area</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>/craft command access</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>/order limit: 6</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>/home limit: 6</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>/auction limit: 6</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Daily /kit wings claim</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="selectPackage('media')" class="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white py-3 rounded-lg font-bold transition-all">
+                        <i class="fab fa-discord mr-2"></i>
+                        CLAIM VIA DISCORD
+                    </button>
+                </div>
+            </div>
+
+            <!-- Package Comparison -->
+            <div class="mt-16 glass-card p-6 rounded-2xl">
+                <h3 class="text-2xl font-bold text-white mb-6 text-center">Package Comparison</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-gray-800">
+                                <th class="text-left py-3 px-4 text-gray-400">Feature</th>
+                                <th class="text-center py-3 px-4">
+                                    <div class="text-blue-400 font-bold">WINGS</div>
+                                    <div class="text-xs text-gray-500">50 Coins</div>
+                                </th>
+                                <th class="text-center py-3 px-4">
+                                    <div class="text-purple-400 font-bold">WINGS+</div>
+                                    <div class="text-xs text-gray-500">100 Coins</div>
+                                </th>
+                                <th class="text-center py-3 px-4">
+                                    <div class="text-green-400 font-bold">MEDIA</div>
+                                    <div class="text-xs text-gray-500">Free</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-800/50">
+                                <td class="py-3 px-4 text-gray-300">Name Prefix</td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-800/50">
+                                <td class="py-3 px-4 text-gray-300">Fly in Spawn</td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-800/50">
+                                <td class="py-3 px-4 text-gray-300">/craft Command</td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-800/50">
+                                <td class="py-3 px-4 text-gray-300">/nick Command</td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-times text-red-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-times text-red-400"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-800/50">
+                                <td class="py-3 px-4 text-gray-300">/anvil Command</td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-times text-red-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-times text-red-400"></i></td>
+                            </tr>
+                            <tr class="border-b border-gray-800/50">
+                                <td class="py-3 px-4 text-gray-300">Command Limits</td>
+                                <td class="text-center py-3 px-4"><span class="text-gray-300">6</span></td>
+                                <td class="text-center py-3 px-4"><span class="text-purple-400 font-bold">10</span></td>
+                                <td class="text-center py-3 px-4"><span class="text-gray-300">6</span></td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 text-gray-300">Daily /kit wings</td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                                <td class="text-center py-3 px-4"><i class="fas fa-check text-green-400"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section id="payment" class="py-16 bg-secondary-800">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4">
+                    <span class="gradient-text">PAYMENT METHODS</span>
+                </h2>
+                <div class="section-divider"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400">
+                    Pilih metode pembayaran yang paling nyaman untuk Anda
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Payment Instructions -->
+                <div class="glass-card p-8">
+                    <h3 class="text-2xl font-bold text-white mb-6">How to Purchase</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                                <span class="text-primary font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Join Discord Server</h4>
+                                <p class="text-gray-400">Masuk ke server Discord kami untuk informasi lebih lanjut</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                                <span class="text-primary font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Create Ticket</h4>
+                                <p class="text-gray-400">Buat ticket di channel #ticket dengan format yang ditentukan</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                                <span class="text-primary font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Payment & Delivery</h4>
+                                <p class="text-gray-400">Lakukan pembayaran dan rank akan diaktivasi dalam 5 menit</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                                <span class="text-primary font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Enjoy Your Rank!</h4>
+                                <p class="text-gray-400">Nikmati semua fitur eksklusif dari rank yang Anda pilih</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://discord.gg/Hvn5wq2X" target="_blank" 
+                           class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-bold flex items-center justify-center">
+                            <i class="fab fa-discord mr-2 text-xl"></i>
+                            JOIN DISCORD SERVER
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Discord Ticket Info -->
+                <div class="glass-card p-8">
+                    <h3 class="text-2xl font-bold text-white mb-6">Discord Ticket Format</h3>
+                    
+                    <div class="bg-secondary-900 rounded-lg p-6 mb-6">
+                        <div class="font-mono text-sm text-gray-300 space-y-2">
+                            <p><span class="text-primary">Type:</span> Rank Purchase</p>
+                            <p><span class="text-primary">Package:</span> WINGS / WINGS+ / MEDIA</p>
+                            <p><span class="text-primary">Username:</span> Your Minecraft Username</p>
+                            <p><span class="text-primary">Payment Method:</span> QRIS / Transfer / Dana / etc</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-white">Important Notes:</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-primary mr-2 mt-1"></i>
+                                <span>Pastikan username Minecraft Anda benar</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-primary mr-2 mt-1"></i>
+                                <span>MEDIA rank hanya untuk content creators (via aplikasi)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-primary mr-2 mt-1"></i>
+                                <span>Proses aktivasi: 1-5 menit setelah pembayaran</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle text-primary mr-2 mt-1"></i>
+                                <span>Support tersedia 24/7 di Discord</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 p-4 bg-yellow-900/30 border border-yellow-700/50 rounded-lg">
+                        <div class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-400 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">No Refund Policy</h4>
+                                <p class="text-sm text-gray-400">
+                                    Setelah rank diaktivasi, tidak ada pengembalian dana. Pastikan Anda memilih paket yang tepat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-secondary-900">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-4">
+                    <span class="gradient-text">FREQUENTLY ASKED QUESTIONS</span>
+                </h2>
+                <div class="section-divider"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400">
+                    Pertanyaan umum tentang rank packages
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ 1 -->
+                <div class="glass-card mb-4 overflow-hidden">
+                    <button onclick="toggleAccordion('faq1')" class="w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-lg font-bold text-white">Bagaimana cara claim rank setelah pembelian?</span>
+                        <i id="faq1-icon" class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div id="faq1-content" class="accordion-content px-6">
+                        <div class="pb-6">
+                            <p class="text-gray-300 mb-4">
+                                Setelah pembayaran berhasil, staff akan mengaktivasi rank Anda dalam 1-5 menit. Anda akan mendapatkan notifikasi di Discord dan rank akan langsung aktif di server.
+                            </p>
+                            <div class="bg-secondary-800 rounded p-4">
+                                <p class="text-sm text-gray-400">
+                                    <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                                    Tip: Pastikan Anda online di server saat rank diaktivasi untuk konfirmasi langsung.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass-card mb-4 overflow-hidden">
+                    <button onclick="toggleAccordion('faq2')" class="w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-lg font-bold text-white">Apakah bisa extend/perpanjang rank?</span>
+                        <i id="faq2-icon" class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div id="faq2-content" class="accordion-content px-6">
+                        <div class="pb-6">
+                            <p class="text-gray-300">
+                                Ya, Anda bisa memperpanjang rank sebelum masa aktif habis. Buat ticket di Discord dengan format "Rank Extension" dan pilih metode pembayaran yang sama. Harga extend sama dengan harga pembelian awal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass-card mb-4 overflow-hidden">
+                    <button onclick="toggleAccordion('faq3')" class="w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-lg font-bold text-white">Bagaimana cara mendapatkan MEDIA rank gratis?</span>
+                        <i id="faq3-icon" class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div id="faq3-content" class="accordion-content px-6">
+                        <div class="pb-6">
+                            <p class="text-gray-300 mb-4">
+                                MEDIA rank diberikan secara gratis untuk content creators (YouTuber, Streamer, TikToker) yang membuat konten tentang server kami. Syaratnya:
+                            </p>
+                            <ul class="list-disc ml-5 text-gray-400 space-y-2">
+                                <li>Minimal 100 subscribers/followers</li>
+                                <li>Kontent harus tentang Lucifer Server</li>
+                                <li>Minimal 5 menit durasi video/stream</li>
+                                <li>Link konten harus dibagikan di Discord</li>
+                            </ul>
+                            <p class="text-gray-300 mt-4">
+                                Buat ticket di Discord dengan bukti konten untuk mengajukan MEDIA rank.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="glass-card mb-4 overflow-hidden">
+                    <button onclick="toggleAccordion('faq4')" class="w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-lg font-bold text-white">Apa yang terjadi jika rank habis masa aktifnya?</span>
+                        <i id="faq4-icon" class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div id="faq4-content" class="accordion-content px-6">
+                        <div class="pb-6">
+                            <p class="text-gray-300">
+                                Setelah rank habis masa aktifnya, semua fitur eksklusif akan dinonaktifkan. Anda akan kembali ke rank default (member). Namun, nama prefix akan tetap ada sebagai tanda bekas rank holder. Anda bisa memperpanjang kapan saja sebelum atau setelah rank habis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="glass-card overflow-hidden">
+                    <button onclick="toggleAccordion('faq5')" class="w-full text-left p-6 flex justify-between items-center">
+                        <span class="text-lg font-bold text-white">Bagaimana jika ada masalah dengan rank saya?</span>
+                        <i id="faq5-icon" class="fas fa-chevron-down text-primary transition-transform"></i>
+                    </button>
+                    <div id="faq5-content" class="accordion-content px-6">
+                        <div class="pb-6">
+                            <p class="text-gray-300 mb-4">
+                                Jika ada masalah dengan rank Anda (fitur tidak bekerja, rank hilang, dll), segera buat ticket di Discord dengan detail:
+                            </p>
+                            <ul class="list-disc ml-5 text-gray-400 space-y-2">
+                                <li>Username Minecraft Anda</li>
+                                <li>Rank yang dibeli</li>
+                                <li>Tanggal pembelian</li>
+                                <li>Detail masalah yang dialami</li>
+                                <li>Screenshot jika ada</li>
+                            </ul>
+                            <p class="text-gray-300 mt-4">
+                                Support team akan membantu Anda dalam waktu 24 jam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Still Have Questions -->
+            <div class="mt-12 max-w-3xl mx-auto glass-card p-8 text-center">
+                <h3 class="text-2xl font-bold text-white mb-4">Masih Ada Pertanyaan?</h3>
+                <p class="text-gray-400 mb-6">
+                    Join Discord server kami untuk mendapatkan bantuan langsung dari staff
+                </p>
+                <a href="https://discord.gg/Hvn5wq2X" target="_blank" 
+                   class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-bold">
+                    <i class="fab fa-discord mr-2"></i>
+                    ASK ON DISCORD
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="bg-black/70 py-8 border-t border-primary/30">
+        <div class="container mx-auto px-4 sm:px-6">
+
+            
+
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                    <img src="images/favicon.png" alt="Lucifer Server Logo" class="h-10 w-10" />
+                    <div>
+                        <h2 class="text-xl font-heading font-bold gradient-text">LUCIFER SERVER</h2>
+                    </div>
+                </div>
+
+                <div class="text-gray-500 text-sm text-center md:text-right">
+                    <p>© 2026 Lucifer Minecraft Server. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex space-x-4 mb-4 md:mb-0">
+                        <a href="#home" class="text-gray-400 hover:text-primary text-sm">Home</a>
+                        <a href="#features" class="text-gray-400 hover:text-primary text-sm">Features</a>
+                        <a href="store.html" class="text-gray-400 hover:text-primary text-sm">Store</a>
+                        <a href="vote.html" class="text-gray-400 hover:text-primary text-sm">Vote</a>
+                        <a href="#connect" class="text-gray-400 hover:text-primary text-sm">Connect</a>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="https://discord.gg/Hvn5wq2X" target="_blank" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-discord text-xl"></i>
+                        </a>
+                        <a href="https://tiktok.com/@nin.098" target="_blank" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                        <a href="mailto:adninsky1@gmail.com" class="text-gray-400 hover:text-white">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // MOBILE MENU
+        // ============================================
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let isMobileMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                isMobileMenuOpen = !isMobileMenuOpen;
+                
+                if (isMobileMenuOpen) {
+                    mobileMenu.classList.add('open');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-times text-xl"></i>';
+                } else {
+                    mobileMenu.classList.remove('open');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (isMobileMenuOpen && 
+                    !mobileMenu.contains(e.target) && 
+                    !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.remove('open');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                    isMobileMenuOpen = false;
+                }
+            });
+        }
+
+        // ============================================
+        // PACKAGE SELECTION
+        // ============================================
+        function selectPackage(packageType) {
+            const modal = document.getElementById('packageModal');
+            const packageName = document.getElementById('modalPackageName');
+            
+            let name = '';
+            let price = '';
+            
+            switch(packageType) {
+                case 'wings':
+                    name = 'WINGS Rank';
+                    price = '50 Coins (30 Days)';
+                    break;
+                case 'wings-plus':
+                    name = 'WINGS+ Rank';
+                    price = '100 Coins (30 Days)';
+                    break;
+                case 'media':
+                    name = 'MEDIA Rank';
+                    price = 'Free (Via Discord Application)';
+                    break;
+            }
+            
+            packageName.textContent = `${name} - ${price}`;
+            
+            // Show modal with animation
+            modal.classList.remove('opacity-0', 'invisible');
+            modal.querySelector('.glass-card').classList.remove('scale-95');
+            setTimeout(() => {
+                modal.querySelector('.glass-card').classList.add('scale-100');
+            }, 10);
+            
+            // Close modal when clicking outside
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('packageModal');
+            modal.querySelector('.glass-card').classList.remove('scale-100');
+            modal.querySelector('.glass-card').classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('opacity-0', 'invisible');
+            }, 300);
+        }
+
+        // ============================================
+        // FAQ ACCORDION
+        // ============================================
+        function toggleAccordion(faqId) {
+            const content = document.getElementById(`${faqId}-content`);
+            const icon = document.getElementById(`${faqId}-icon`);
+            
+            // Close all other FAQs
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item.id !== `${faqId}-content`) {
+                    item.classList.remove('open');
+                    item.style.maxHeight = '0';
+                }
+            });
+            
+            document.querySelectorAll('.accordion-content + i').forEach(item => {
+                if (item.id !== `${faqId}-icon`) {
+                    item.classList.remove('fa-chevron-up');
+                    item.classList.add('fa-chevron-down');
+                }
+            });
+            
+            // Toggle current FAQ
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                content.style.maxHeight = '0';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            } else {
+                content.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            }
+        }
+
+        // ============================================
+        // SMOOTH SCROLL
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (!target) return;
+                
+                // Close mobile menu if open
+                if (isMobileMenuOpen) {
+                    mobileMenu.classList.remove('open');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                    isMobileMenuOpen = false;
+                }
+                
+                // Calculate scroll position
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                
+                // Smooth scroll
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Update URL
+                history.pushState(null, null, href);
+                
+                // Update active nav
+                updateActiveNav(href);
+            });
+        });
+
+        // ============================================
+        // ACTIVE NAVIGATION
+        // ============================================
+        function updateActiveNav(hash = null) {
+            const currentHash = hash || window.location.hash;
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentHash) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Update nav on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPosition = window.scrollY + 100;
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = '#' + section.getAttribute('id');
+                }
+            });
+            
+            updateActiveNav(currentSection);
+        });
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Store page loaded');
+            updateActiveNav();
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
